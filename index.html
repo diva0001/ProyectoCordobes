@@ -14,6 +14,8 @@
             color: white;
             font-family: 'Arial', sans-serif;
             position: relative;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -29,12 +31,13 @@
         }
 
         button {
-            padding: 20px 40px;
-            font-size: 24px;
+            padding: 15px 30px;
+            font-size: 20px;
             cursor: pointer;
             border: none;
             border-radius: 10px;
             margin-bottom: 20px;
+            transition: background-color 0.3s;
         }
 
         #yes {
@@ -45,8 +48,6 @@
         #no {
             background-color: #d3d3d3;
             color: black;
-            position: absolute;
-            top: 100px;
         }
 
         .hidden {
@@ -55,26 +56,29 @@
         }
 
         .flowers {
-            width: 300px;
-            margin-top: 50px;
+            width: 40%;
+            max-width: 400px;
+            margin-top: 20px;
             animation: bounce 2s infinite;
         }
 
         .characters {
-            width: 300px;
+            width: 40%;
+            max-width: 300px;
             margin-top: 20px;
         }
 
         .image-container {
             display: flex;
-            justify-content: center; 
+            justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         .image-below-buttons {
-            margin-top: 120px;
-            width: 200px;
+            margin-top: 20px;
+            width: 230px;
         }
 
         @keyframes bounce {
@@ -88,10 +92,56 @@
             }
         }
 
+        @media (max-width: 1024px) {
+            .flowers,
+            .characters {
+                width: 45%;
+            }
+
+            button {
+                padding: 18px 36px;
+                font-size: 22px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .image-container {
+            .flowers,
+            .characters {
+                width: 70%;
+            }
+
+            .buttons {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .image-below-buttons {
+                width: 180px;
+            }
+
+            button {
+                padding: 12px 24px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .flowers,
+            .characters {
+                width: 55%;
+            }
+
+            .buttons {
                 flex-direction: column;
-                align-items: center;
+                margin-top: 30px;
+            }
+
+            .image-below-buttons {
+                width: 120px;
             }
         }
     </style>
